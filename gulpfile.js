@@ -11,6 +11,24 @@ var elixir = require('laravel-elixir');
  |
  */
 
+var paths = {
+    'bootstrap': './vendor/bower_components/bootstrap-sass/assets/',
+    'jquery': './vendor/bower_components/jquery/'
+};
+
 elixir(function(mix) {
-    mix.less('app.less');
+        //Compile style.scss into css folder
+    mix.sass("style.scss", 'public/css/',
+        {
+            includePaths: [
+                paths.bootstrap + 'stylesheets/'
+            ]
+        })
+        //Copy Bootstrap Fonts to Font File
+        .copy(paths.bootstrap + 'fonts/bootstrap/**', 'public/fonts')
+        //Concat Scripts
+        .scripts([
+            paths.jquery + "dist/jquery.js",
+            paths.bootstrap + "javascripts/bootstrap.js"
+        ], 'public/js/app.js', './');
 });

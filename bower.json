@@ -1,0 +1,19 @@
+{
+  "name": "TESC",
+  "version": "0.0.1",
+  "homepage": "tesc.ucsd.edu",
+  "authors": [
+    "Mike Shi <mike@sdhacks.io>"
+  ],
+  "license": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3"
+  }
+}
