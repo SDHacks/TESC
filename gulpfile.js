@@ -17,7 +17,7 @@ var paths = {
 };
 
 elixir(function(mix) {
-        //Compile style.scss into css folder
+    //Compile style.scss into css folder
     mix.sass("style.scss", 'public/css/',
         {
             includePaths: [
@@ -29,6 +29,7 @@ elixir(function(mix) {
         //Concat Scripts
         .scripts([
             paths.jquery + "dist/jquery.js",
-            paths.bootstrap + "javascripts/bootstrap.js"
+            paths.bootstrap + "javascripts/bootstrap.js",
+            './resources/**/*.js'
         ], 'public/js/app.js', './');
 });
